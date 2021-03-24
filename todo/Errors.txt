@@ -1,0 +1,30 @@
+dispatch is not a function etc
+sol: 
+import Context with {} since it is not the default app! :facepalm
+
+#######################################
+
+cannot update a component while rendering a different component 
+sol:
+If you are using functional components you could wrap the setState call into useEffect
+
+tried this in ToDoItem
+const [dispatch, setDispatch] = useState('');
+useEffect(() => {
+    setDispatch(useContext(Context));
+},[])
+cannot call a hook inside a hook
+hooks must be called inside a function component or a custom hook function
+
+My educated guess is that React doesn't like the fact that the state of the parent component is being updated 
+by functions passed to the children, which again are dependant on the props passed along with it. Am I on to something?
+
+<button onClick={dispatch({type: 'delete', payload: id})}>Delete</button> 
+change to
+<button onClick={() => dispatch({type: 'delete', payload: id})}>Delete</button> 
+
+what the hell
+
+
+
+
