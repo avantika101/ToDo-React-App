@@ -25,6 +25,18 @@ change to
 
 what the hell
 
+#######################################
+
+Jsx syntax
+component render cycle
+
+#######################################
+
+useState
+useEffect
+useContext
+useReducer
+
 
 
 
